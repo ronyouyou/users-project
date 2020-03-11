@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AleatColor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body id="contenu">
+
+		<div id="haut-page">
+			<h1>Changeons de couleur !</h1>
+			<footer class="blockquote-footer">Hello everyone ! Let's change the background color !</footer>
+		</div><br />
+		
+		<div id="text-role">
+			<p>Sur ce site vous aurez la possibilité de pouvoir changer le fond de couleur toutes les décisecondes ! Rien que ça !</p>
+		</div>
+		
+		<button type="button" class="btn btn-primary" onclick="ChangeColor()">Changer le fond page !</button>
+		<button type="button" class="btn btn-secondary" onclick="StopColor()">Stopper le fond page !</button>
+		<br /><br />
+		
+		<ul id="liste-aide">
+			<li><a style="text-align: center" href="https://stackoverflow.com/questions/1484506/random-color-generator">Aide pour créer un générateur de couleur !<a/></li>
+			<li><a style="text-align: center" href="https://www.w3schools.com/jsref/met_win_setinterval.asp">Aide pour démarrer une action répétitive (le changement de couleur) !<a/></li>
+			<li><a style="text-align: center" href="https://www.w3schools.com/jsref/met_win_clearinterval.asp">Aide pour arrêter la répétition !<a/></li>
+		</ul>
+		
+		<p class="bas-droite">Par Youness BENDAOUD</p>
+		
+		<script id="js-aleat-color">
+		let Interval = null;
+		let encours = false;
+		function ChangeColor() {
+			if(encours == false){
+				Interval = window.setInterval(AttributeColor, 100);
+				encours = true;
+			}
+		}
+		function StopColor() {
+			clearInterval(Interval);
+			Interval = null;
+			encours = false;
+		}
+	
+		function AttributeColor() {
+			document.getElementById("contenu").style.backgroundColor = getAleatColor();
+		}
+	
+		function getAleatColor() {
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += letters[Math.floor(Math.random() * 16)];
+			}
+			return color;
+		}
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	</body>
+</html>
