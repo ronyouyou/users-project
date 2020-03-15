@@ -7,7 +7,7 @@ const mysql = require('mysql2');
  
 // create the connection to database
 const connection = mysql.createConnection({
-  host: '172.17.0.2',
+  host: '172.17.0.2',//ip de 'db'
   user: 'root',
   password: 'rtlry',
   database: 'ProgWeb'
