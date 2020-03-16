@@ -1,5 +1,5 @@
 # users-project
-Récupérer et afficher un ensemble d'utilisateur sous format JSON, en utilisant NodeJS.
+Récupérer et afficher un ensemble d'utilisateur sous format JSON, en utilisant NodeJS et Docker.
 
 # Aide pour utiliser le projet :
 
@@ -26,11 +26,11 @@ Infos sur les options principales de la commande :
 
 
 5°) docker run -it --rm -p 8081:3000 -v $PWD:/users-project --link mysql:db node:12 bash
-
+Elle permet de lancer une invite commande sur l'image node:12 contenant l'ensemble de notre projet en mode 'développement'.
 
 6°) cd users-project
 
-Rendu ici, rendez-vous sur PhpMyAdmin(soit 127.0.0.1:3333 ou bien 192.168.99.100:3333 si vous êtes sur Windows).
+Rendu ici, rendez-vous sur PhpMyAdmin(soit 127.0.0.1:3333, ou bien 192.168.99.100:3333 si vous êtes sur Windows).
 Connectez vous avec les identifiants (login = root, et le mot de passe correspond à celui défini dans la 3ème commande).
 Une fois connecté, créez la base 'ProgWeb' et importez le script sql nommé 'user.sql' que vous trouverez dans le dossier du projet créé après le clonage depuis github.
 
