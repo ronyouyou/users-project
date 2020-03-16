@@ -38,7 +38,7 @@ Une fois l'ensemble des données importées, retournez dans le terminal de Docke
 
 7°) node index.js
 
-Sur votre navigateur, rendez-vous sur le projet qui est lancé en saisissant l'adresse 127.0.0.1:8081 ou bien 192.168.99.100:8081
+Sur votre navigateur, rendez-vous sur le projet qui est lancé en saisissant l'adresse 127.0.0.1:8081 ou bien 192.168.99.100:8081.
 
 Il ne vous reste plus qu'à visualiser l'ensemble des données par le biais de la route /users ou bien, si vous le souhaitez, je vous invite à visualiser seulement une seule donnée, pour cela :
 
