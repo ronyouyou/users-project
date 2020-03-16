@@ -22,11 +22,11 @@ app.get('/users', function (req, res) {
 
 app.get('/users/:id', function (req, res) {
   let id = req.params.id;
-  connection.query('SELECT count(*) as"total" from user where id = "'+ id +'";', function (error, results) {
+  connection.query('SELECT count(*) as"total" from user where id = ?;', [id] function (error, results) {
     if (results[0].total == 0) {
       res.send("Utilisateur inconnu. Veuillez tester un autre id S.V.P...");
     } else {                                                                                                                     
-      connection.query('SELECT * from user where id = "'+ id +'";', function (error, result) {
+      connection.query('SELECT * from user where id = ?;', [id] function (error, result) {
         res.json(result);
       })
     }
